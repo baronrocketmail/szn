@@ -1,25 +1,26 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import getUnpaid from "./helperFunctions/dataFetching.mjs";
+import {getUnpaid, getName} from "./helperFunctions/dataFetching.mjs";
 import {useState} from "react";
+import Link from "next/link";
+import Nav from "./components/Nav";
 
 export async function getStaticProps(context) {
 
-    let unpaid = await getUnpaid().then(x => {return x})
+    let elements = [...await getName().then(x => {return x})]
+    elements.push({name:"autopay", url:"autopay"})
+    elements.push(...await getUnpaid().then(x => {return x}))
+    elements.push({name:"...", url:"log"})
 
     return {
-        props:{unpaid}
+        props:{elements},
+        revalidate:1
     }
 }
 
 export default function Home(props) {
-
-
-
   return (
-      <h1>
-        pp
-      </h1>
+       <Nav objArry = {props.elements}/>
   )
 }

@@ -17,15 +17,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export default async function getUnpaid() {
+getUnpaid()
+
+export async function getUnpaid() {
     return new Promise(function(resolve, reject) {
         const unpaidQuery = query(collection(getFirestore(), "/units/18572 cull canyon/payments"), where("status", "==", "unpaid"))
 
          getDocs(unpaidQuery).then(snapshot => {
              let unpaidArry = [];
             snapshot.docs.forEach(elem => unpaidArry.push(elem.data()))
-            // console.log((snapshot.docs).length)
-            // console.log(unpaidArry)
+            console.log((snapshot.docs).length)
+            console.log(unpaidArry)
              resolve(unpaidArry)
         })
 
@@ -33,4 +35,27 @@ export default async function getUnpaid() {
 
     // return unpaidArry;
 }
+getName()
+export async function getName() {
+    return new Promise(function(resolve, reject) {
+        const unpaidQuery = query(collection(getFirestore(), "/units/18572 cull canyon/payments"), where("status", "==", "unpaid"))
+
+        const colRef = collection(getFirestore(), "/units/18572 cull canyon/info")
+        getDocs(colRef).then(snapshot => {
+            let unpaidArry = [];
+            snapshot.docs.forEach(elem => unpaidArry.push(elem.data()))
+            console.log((snapshot.docs).length)
+            console.log(unpaidArry)
+            resolve(unpaidArry)
+        })
+
+    })
+    // return{url: "/", name: "18572 cull canyon"}
+
+
+
+    // return unpaidArry;
+}
+
+
 
