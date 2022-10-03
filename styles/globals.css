@@ -5,8 +5,10 @@
   margin-top: 20vh;
 }
 a:visited{
-  color: orangered;
+  color: orange;
 }
 a{
   text-decoration: none;
+  color: orange;
+
 }

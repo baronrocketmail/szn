@@ -20,6 +20,7 @@ export async function getStaticProps(context) {
     }
 }
 export default function Log(props){
+
     return(
         <Nav objArry={props.elements}/>
     )
