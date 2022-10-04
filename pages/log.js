@@ -37,10 +37,11 @@ export default function Log(props){
     return(
         <div>
         <Nav objArry={props.elements}/>
-
+            <sl-button size="large">Click me</sl-button>
         <table>
             {tableRows}
         </table>
+
         </div>
     )
 }

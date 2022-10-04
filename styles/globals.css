@@ -13,13 +13,14 @@ a{
   color: orange;
 }
 table, tr, td, th{
-  border: 0.5px solid orange;
+  border: 1px solid orange;
   border-collapse: collapse;
   font-size: 8vmin;
   margin-left:auto;
   margin-right:auto;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   color: orange;
+  margin-top: 5vmin;
 }
 tr, td, th{
   padding: 5px;
