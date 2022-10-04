@@ -1,4 +1,4 @@
-import {getName, getUnpaid} from "./helperFunctions/dataFetching.mjs";
+import {getName, getNotUnpaid, getUnpaid} from "./helperFunctions/dataFetching.mjs";
 import Nav from "./components/Nav";
 
 export async function getStaticProps(context) {
@@ -14,14 +14,33 @@ export async function getStaticProps(context) {
 
     elements.push({name:"...", url:"/"})
 
+    let notUnpaid = await getNotUnpaid().then(x => {return x})
+
+
+
+
+
     return {
-        props:{elements},
+        props:{elements, notUnpaid},
         revalidate:1
     }
 }
 export default function Log(props){
+    console.log(props.tableRows)
+
+    let tableRows = []
+    for(let elem in props.notUnpaid){
+        if (props.notUnpaid[elem].status == "paid") tableRows.push(<tr><td>{props.notUnpaid[elem].name}</td><td>{props.notUnpaid[elem].amount}</td></tr>);
+        else tableRows.push(<tr><td>{props.notUnpaid[elem].name}<sub>{props.notUnpaid[elem].status}</sub></td><td>{props.notUnpaid[elem].amount}</td></tr>);
+    }
 
     return(
+        <div>
         <Nav objArry={props.elements}/>
+
+        <table>
+            {tableRows}
+        </table>
+        </div>
     )
 }

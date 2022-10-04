@@ -17,7 +17,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-getUnpaid()
 
 export async function getUnpaid() {
     return new Promise(function(resolve, reject) {
@@ -35,7 +34,6 @@ export async function getUnpaid() {
 
     // return unpaidArry;
 }
-getName()
 export async function getName() {
     return new Promise(function(resolve, reject) {
         const unpaidQuery = query(collection(getFirestore(), "/units/18572 cull canyon/payments"), where("status", "==", "unpaid"))
@@ -55,6 +53,18 @@ export async function getName() {
 
 
     // return unpaidArry;
+}
+getNotUnpaid()
+export async function getNotUnpaid(){
+    return new Promise(function(resolve, reject) {
+    const notUnpaidQuery = query(collection(getFirestore(),"units/18572 cull canyon/payments"), where("status", "!=", "unpaid"))
+    getDocs(notUnpaidQuery).then(snapshot => {
+        let notUnpaidArry = [];
+        snapshot.docs.forEach(elem => notUnpaidArry.push(elem.data()))
+        console.log(notUnpaidArry)
+        resolve(notUnpaidArry)
+    })
+    })
 }
 
 
