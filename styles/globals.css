@@ -28,3 +28,7 @@ tr, td, th{
 sub{
   font-size: 1vmin;
 }
+.pop{
+  margin-right: auto;
+  margin-left: auto;
+}
