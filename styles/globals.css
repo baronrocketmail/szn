@@ -23,12 +23,17 @@ table, tr, td, th{
   margin-top: 5vmin;
 }
 tr, td, th{
-  padding: 5px;
+  padding-right: 5px;
+  padding-right: 5px;
+
 }
 sub{
   font-size: 1vmin;
 }
-.pop{
-  margin-right: auto;
-  margin-left: auto;
+#pop{
+  padding-top: 5px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
 }
