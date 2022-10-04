@@ -37,22 +37,8 @@ export default function Log(props){
     return(
         <div>
         <Nav objArry={props.elements}/>
-
-        <table>
-            {tableRows}
-        </table>
-
             <div id={"pop"}>
-                <sl-dropdown>
-                    <sl-button slot="trigger" caret>t</sl-button>
-                    <sl-menu>
-                        <sl-menu-item>light</sl-menu-item>
-                        <sl-menu-item>grey</sl-menu-item>
-                        <sl-menu-item>dark</sl-menu-item>
-                        <sl-divider></sl-divider>
-                        <sl-menu-item checked>auto</sl-menu-item>
-                    </sl-menu>
-                </sl-dropdown>
+                <sl-color-picker value="#4a90e2" label="Select a color"/>
                 <sl-dropdown>
                     <sl-button slot="trigger" caret>f</sl-button>
                     <sl-menu>
@@ -60,9 +46,26 @@ export default function Log(props){
                         <sl-menu-item>sf pro</sl-menu-item>
                     </sl-menu>
                 </sl-dropdown>
-                <sl-color-picker value="#4a90e2" label="Select a color"/>
+                <sl-dropdown>
+                    <sl-button slot="trigger" caret>t</sl-button>
+                    <sl-menu>
+                        <sl-menu-item>light</sl-menu-item>
+                        <sl-menu-item>grey</sl-menu-item>
+                        <sl-menu-item>dark grey
+                        </sl-menu-item>
+                        <sl-divider></sl-divider>
+                        <sl-menu-item checked>auto</sl-menu-item>
+                    </sl-menu>
+                </sl-dropdown>
+
+
 
             </div>
+        <table>
+            {tableRows}
+        </table>
+
+
 
         </div>
     )

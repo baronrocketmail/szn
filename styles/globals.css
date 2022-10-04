@@ -20,7 +20,8 @@ table, tr, td, th{
   margin-right:auto;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   color: orange;
-  margin-top: 5vmin;
+  margin-top: 3px;
+
 }
 tr, td, th{
   padding-right: 5px;
@@ -31,9 +32,11 @@ sub{
   font-size: 1vmin;
 }
 #pop{
-  padding-top: 5px;
+  padding-top: 50px;
   align-items: center;
   width: 100%;
   justify-content: center;
   display: flex;
+
+
 }
