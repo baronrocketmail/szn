@@ -1,4 +1,4 @@
-import {getName, getUnpaid} from "./helperFunctions/dataFetching.mjs";
+import { getUnpaid} from "./helperFunctions/dataFetching.mjs";
 import Nav from "./components/Nav";
 
 export async function getStaticPaths(){

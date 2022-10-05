@@ -1,9 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import {getUnpaid, getName} from "./helperFunctions/dataFetching.mjs";
-import {useState} from "react";
-import Link from "next/link";
 import Nav from "./components/Nav";
 
 export async function getStaticProps(context) {

@@ -32,7 +32,6 @@ export async function getUnpaid() {
 
     })
 
-    // return unpaidArry;
 }
 export async function getName() {
     return new Promise(function(resolve, reject) {
@@ -42,26 +41,19 @@ export async function getName() {
         getDocs(colRef).then(snapshot => {
             let unpaidArry = [];
             snapshot.docs.forEach(elem => unpaidArry.push(elem.data()))
-            console.log((snapshot.docs).length)
-            console.log(unpaidArry)
             resolve(unpaidArry)
         })
 
     })
-    // return{url: "/", name: "18572 cull canyon"}
 
-
-
-    // return unpaidArry;
 }
-getNotUnpaid()
+
 export async function getNotUnpaid(){
     return new Promise(function(resolve, reject) {
     const notUnpaidQuery = query(collection(getFirestore(),"units/18572 cull canyon/payments"), where("status", "!=", "unpaid"))
     getDocs(notUnpaidQuery).then(snapshot => {
         let notUnpaidArry = [];
         snapshot.docs.forEach(elem => notUnpaidArry.push(elem.data()))
-        console.log(notUnpaidArry)
         resolve(notUnpaidArry)
     })
     })

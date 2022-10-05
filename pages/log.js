@@ -1,4 +1,4 @@
-import {getName, getNotUnpaid, getUnpaid} from "./helperFunctions/dataFetching.mjs";
+import {getNotUnpaid, getUnpaid} from "./helperFunctions/dataFetching.mjs";
 import Nav from "./components/Nav";
 
 export async function getStaticProps(context) {
@@ -37,30 +37,6 @@ export default function Log(props){
     return(
         <div>
         <Nav objArry={props.elements}/>
-            <div id={"pop"}>
-                <sl-color-picker value="#4a90e2" label="Select a color"/>
-                <sl-dropdown>
-                    <sl-button slot="trigger" caret>f</sl-button>
-                    <sl-menu>
-                        <sl-menu-item>love from</sl-menu-item>
-                        <sl-menu-item>sf pro</sl-menu-item>
-                    </sl-menu>
-                </sl-dropdown>
-                <sl-dropdown>
-                    <sl-button slot="trigger" caret>t</sl-button>
-                    <sl-menu>
-                        <sl-menu-item>light</sl-menu-item>
-                        <sl-menu-item>grey</sl-menu-item>
-                        <sl-menu-item>dark grey
-                        </sl-menu-item>
-                        <sl-divider></sl-divider>
-                        <sl-menu-item checked>auto</sl-menu-item>
-                    </sl-menu>
-                </sl-dropdown>
-
-
-
-            </div>
         <table>
             {tableRows}
         </table>

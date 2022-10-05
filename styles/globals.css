@@ -1,25 +1,44 @@
+@font-face {
+  font-family: "canto";
+  src: url(../pages/Canto-SemiBold.ttf) format("truetype");
+  font-weight: 400;
+  font-display: block;
+}
+
+:root{
+  --background-color: #1E1E1E;
+  --font-color: white;
+  --font-family: canto;
+  /*--font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;*/
+}
+body{
+  background-color: var(--background-color);
+}
+
 .nav{
-  font-size: 10vmin;
+  font-size: 12vmin;
   text-align: center;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: var(--font-family);
   margin-top: 20vh;
 
 }
+
+
 a:visited{
-  color: orange;
+  color: var(--font-color);
 }
 a{
   text-decoration: none;
-  color: orange;
+  color: var(--font-color);
 }
 table, tr, td, th{
-  border: 1px solid orange;
+  border: 1px solid var(--font-color);
   border-collapse: collapse;
   font-size: 8vmin;
   margin-left:auto;
   margin-right:auto;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-  color: orange;
+  font-family: var(--font-family);
+  color: var(--font-color);
   margin-top: 3px;
 
 }
@@ -29,7 +48,7 @@ tr, td, th{
 
 }
 sub{
-  font-size: 1vmin;
+  font-size: 2vmin;
 }
 #pop{
   padding-top: 50px;
